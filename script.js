@@ -626,11 +626,21 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeChatBox() {
     const chatBox = document.getElementById('chat-box');
     const chatToggle = document.getElementById('chat-toggle');
+<<<<<<< HEAD
+=======
+    const chatMaximize = document.getElementById('chat-maximize');
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     const chatHeader = document.getElementById('chat-header');
     const chatInput = document.getElementById('chat-input-field');
     const chatSendBtn = document.getElementById('chat-send-btn');
     const chatMessages = document.getElementById('chat-messages');
     
+<<<<<<< HEAD
+=======
+    let autoMinimizeTimer;
+    const AUTO_MINIMIZE_DELAY = 5000; // 5 seconds
+    
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     // Chat responses
     const chatResponses = {
         'hello': 'Hello! Welcome to Libey BuildTech! 🏗️ I\'m here to help you with our premium BIM services. We\'ve completed 100+ BIM models and 800+ automation projects with 100% client satisfaction. What service interests you today?',
@@ -656,14 +666,55 @@ function initializeChatBox() {
         'default': 'I\'m your BIM assistant! 🏗️ I can help you with:\n\n• Service information\n• Pricing details\n• Portfolio showcase\n• Contact information\n• Quote requests\n\nWe\'ve completed 100+ BIM models and 800+ automation projects. What would you like to know? Get a quote to start your project!'
     };
     
+<<<<<<< HEAD
+=======
+    // Auto-minimize function
+    function startAutoMinimizeTimer() {
+        clearTimeout(autoMinimizeTimer);
+        autoMinimizeTimer = setTimeout(() => {
+            if (!chatBox.classList.contains('minimized')) {
+                chatBox.classList.add('minimized');
+            }
+        }, AUTO_MINIMIZE_DELAY);
+    }
+    
+    // Reset auto-minimize timer on user interaction
+    function resetAutoMinimizeTimer() {
+        clearTimeout(autoMinimizeTimer);
+        if (!chatBox.classList.contains('minimized')) {
+            startAutoMinimizeTimer();
+        }
+    }
+    
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     // Toggle chat box
     chatToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         chatBox.classList.toggle('minimized');
+<<<<<<< HEAD
     });
     
     chatHeader.addEventListener('click', () => {
         chatBox.classList.remove('minimized');
+=======
+        if (!chatBox.classList.contains('minimized')) {
+            resetAutoMinimizeTimer();
+        }
+    });
+    
+    // Maximize chat box
+    chatMaximize.addEventListener('click', (e) => {
+        e.stopPropagation();
+        chatBox.classList.remove('minimized');
+        resetAutoMinimizeTimer();
+    });
+    
+    chatHeader.addEventListener('click', () => {
+        if (chatBox.classList.contains('minimized')) {
+            chatBox.classList.remove('minimized');
+            resetAutoMinimizeTimer();
+        }
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     });
     
     // Send message function
@@ -674,10 +725,21 @@ function initializeChatBox() {
             addMessage(message, 'user');
             chatInput.value = '';
             
+<<<<<<< HEAD
+=======
+            // Reset auto-minimize timer
+            resetAutoMinimizeTimer();
+            
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
             // Simulate typing delay
             setTimeout(() => {
                 const response = getChatResponse(message);
                 addMessage(response, 'assistant');
+<<<<<<< HEAD
+=======
+                // Reset timer after assistant response
+                resetAutoMinimizeTimer();
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
             }, 1000);
         }
     }
@@ -751,6 +813,24 @@ function initializeChatBox() {
             sendMessage();
         }
     });
+<<<<<<< HEAD
+=======
+    
+    // Add event listeners for user interaction to reset timer
+    chatInput.addEventListener('input', resetAutoMinimizeTimer);
+    chatInput.addEventListener('focus', resetAutoMinimizeTimer);
+    chatMessages.addEventListener('scroll', resetAutoMinimizeTimer);
+    
+    // Start auto-minimize timer when chat box is opened
+    chatBox.addEventListener('transitionend', () => {
+        if (!chatBox.classList.contains('minimized')) {
+            resetAutoMinimizeTimer();
+        }
+    });
+    
+    // Initialize chat box as minimized by default
+    // No need to start timer since it starts minimized
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 }
 
 // Careers Modal Functions

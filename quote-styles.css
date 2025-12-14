@@ -86,10 +86,15 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
+<<<<<<< HEAD
     /* Right column uses clamp to stay responsive while tighter than before */
     grid-template-columns: 1fr clamp(320px, 28vw, 480px);
     grid-template-rows: auto 1fr;
     gap: 1.25rem;
+=======
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     align-items: start;
 }
 
@@ -100,8 +105,11 @@
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
+<<<<<<< HEAD
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 }
 
 .service-selection h2 {
@@ -175,12 +183,15 @@
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
+<<<<<<< HEAD
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     /* Allow details area to scroll if content gets tall, keeping space for summary */
     max-height: calc(70vh - 4rem);
     overflow: auto;
     padding-right: 0.5rem; /* room for scrollbar */
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 }
 
 .details-header {
@@ -272,6 +283,7 @@
     margin: 0;
 }
 
+<<<<<<< HEAD
 /* Responsive: revert to single column on narrow screens */
 @media (max-width: 900px) {
     .calculator-wrapper {
@@ -295,6 +307,8 @@
     }
 }
 
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 /* Quote Summary */
 .quote-summary {
     background: white;
@@ -302,11 +316,16 @@
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
+<<<<<<< HEAD
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     position: -webkit-sticky; /* for Safari */
     position: sticky;
     top: 1.5rem; /* stick within viewport so it remains visible */
+=======
+    position: sticky;
+    top: 2rem;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 }
 
 .summary-header {
@@ -403,6 +422,7 @@
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
+<<<<<<< HEAD
     /* Currency selection modal */
     .currency-modal {
         position: fixed;
@@ -449,6 +469,8 @@
         cursor: pointer;
     }
 
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     /* Cart Actions */
     .cart-actions {
         margin: 1.5rem 0;

@@ -100,7 +100,11 @@ const currencySymbols = {
 // Global variables
 let selectedService = null;
 let currentQuote = 0;
+<<<<<<< HEAD
 let selectedCurrency = null; // require explicit choice from user now
+=======
+let selectedCurrency = 'USD';
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 let cart = [];
 let selectedPaymentMethod = 'card'; // Default to card payment
 
@@ -114,6 +118,7 @@ const paymentSection = document.getElementById('payment-section');
 document.addEventListener('DOMContentLoaded', function() {
     initializeQuoteCalculator();
     setupEventListeners();
+<<<<<<< HEAD
     showCurrencyModalIfNeeded();
 });
 
@@ -161,6 +166,10 @@ function ensureCurrencySelected() {
     return true;
 }
 
+=======
+});
+
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 function initializeQuoteCalculator() {
     // Hide all service forms initially
     hideAllServiceForms();
@@ -209,6 +218,7 @@ function setupEventListeners() {
     setupPaymentEventListeners();
 }
 
+<<<<<<< HEAD
 // Re-calculate the active service's quote after currency or other global changes
 function calculateAndUpdateQuote() {
     switch (selectedService) {
@@ -232,6 +242,8 @@ function calculateAndUpdateQuote() {
     }
 }
 
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 function selectService(serviceType) {
     // Remove previous selection
     serviceOptions.forEach(option => {
@@ -389,7 +401,10 @@ function toggleVisualizationSections() {
 
 function calculateBIMModellingPrice() {
     if (selectedService !== 'bim-modelling') return;
+<<<<<<< HEAD
     if (!ensureCurrencySelected()) return;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     
     const projectType = document.getElementById('project-type').value;
     const area = parseFloat(document.getElementById('bim-area').value) || 0;
@@ -429,7 +444,10 @@ function calculateBIMModellingPrice() {
 
 function calculateBIMAutomationPrice() {
     if (selectedService !== 'bim-automation') return;
+<<<<<<< HEAD
     if (!ensureCurrencySelected()) return;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     
     const tasks = parseInt(document.getElementById('automation-tasks').value) || 0;
     const automationType = document.getElementById('automation-type').value;
@@ -460,7 +478,10 @@ function calculateBIMAutomationPrice() {
 
 function calculateBIMCoordinationPrice() {
     if (selectedService !== 'bim-coordination') return;
+<<<<<<< HEAD
     if (!ensureCurrencySelected()) return;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     
     const coordinationType = document.getElementById('coordination-type').value;
     const area = parseFloat(document.getElementById('coordination-area').value) || 0;
@@ -500,7 +521,10 @@ function calculateBIMCoordinationPrice() {
 
 function calculateQuantitiesCostingPrice() {
     if (selectedService !== 'quantities-costing') return;
+<<<<<<< HEAD
     if (!ensureCurrencySelected()) return;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     
     const costingType = document.getElementById('costing-type').value;
     const area = parseFloat(document.getElementById('costing-area').value) || 0;
@@ -543,7 +567,10 @@ function calculateQuantitiesCostingPrice() {
 
 function calculate3DVisualizationPrice() {
     if (selectedService !== '3d-visualization') return;
+<<<<<<< HEAD
     if (!ensureCurrencySelected()) return;
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     
     const visualizationType = document.getElementById('visualization-type').value;
     
@@ -602,6 +629,7 @@ function getVisualizationSummary(type) {
 }
 
 function updateQuoteSummary(serviceName, details, breakdown, totalPrice = 0) {
+<<<<<<< HEAD
     // If currency not chosen yet, show amounts as placeholder and don't attempt formatting
     if (!selectedCurrency) {
         document.getElementById('selected-service-name').textContent = serviceName;
@@ -612,6 +640,8 @@ function updateQuoteSummary(serviceName, details, breakdown, totalPrice = 0) {
         document.getElementById('add-to-cart-btn').style.display = 'none';
         return;
     }
+=======
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     document.getElementById('selected-service-name').textContent = serviceName;
     
     const detailsElement = document.getElementById('service-details-summary');

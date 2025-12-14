@@ -1932,7 +1932,11 @@ html {
     bottom: 30px;
     left: 30px;
     z-index: 1000;
+<<<<<<< HEAD
     width: 350px;
+=======
+    width: 280px;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1960,6 +1964,15 @@ html {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+.chat-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 .chat-title {
     display: flex;
     align-items: center;
@@ -1971,6 +1984,10 @@ html {
     font-size: 1.2rem;
 }
 
+<<<<<<< HEAD
+=======
+.chat-maximize,
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 .chat-toggle {
     background: none;
     border: none;
@@ -1982,12 +1999,25 @@ html {
     transition: all 0.3s ease;
 }
 
+<<<<<<< HEAD
+=======
+.chat-maximize:hover,
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 .chat-toggle:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
+<<<<<<< HEAD
 .chat-body {
     height: 400px;
+=======
+.chat-maximize {
+    font-size: 1rem;
+}
+
+.chat-body {
+    height: 320px;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     display: flex;
     flex-direction: column;
 }
@@ -1996,7 +2026,11 @@ html {
     flex: 1;
     padding: 1rem;
     overflow-y: auto;
+<<<<<<< HEAD
     max-height: 300px;
+=======
+    max-height: 220px;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
 }
 
 .message {
@@ -2096,13 +2130,21 @@ html {
     }
     
     .chat-box {
+<<<<<<< HEAD
         width: 300px;
+=======
+        width: 250px;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
         left: 20px;
         bottom: 20px;
     }
     
     .chat-body {
+<<<<<<< HEAD
         height: 350px;
+=======
+        height: 280px;
+>>>>>>> dfd6706c19f4ab8001515f71c543b6671db8ab58
     }
 }
 
