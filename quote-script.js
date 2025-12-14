@@ -100,7 +100,7 @@ const currencySymbols = {
 // Global variables
 let selectedService = null;
 let currentQuote = 0;
-let selectedCurrency = 'USD';
+let selectedCurrency = null; // require explicit choice from user now
 let cart = [];
 let selectedPaymentMethod = 'card'; // Default to card payment
 
@@ -114,7 +114,52 @@ const paymentSection = document.getElementById('payment-section');
 document.addEventListener('DOMContentLoaded', function() {
     initializeQuoteCalculator();
     setupEventListeners();
+    showCurrencyModalIfNeeded();
 });
+
+// Currency modal logic: force user to choose currency before interacting with prices
+function showCurrencyModalIfNeeded() {
+    const modal = document.getElementById('currency-modal');
+    const modalSelector = document.getElementById('currency-modal-selector');
+    const confirmBtn = document.getElementById('currency-modal-confirm');
+
+    if (!modal) return;
+
+    // Show modal
+    modal.style.display = 'flex';
+
+    confirmBtn.addEventListener('click', () => {
+        const choice = modalSelector.value || 'USD';
+        selectedCurrency = choice;
+
+        // Sync with main page selector if present
+        const mainSelector = document.getElementById('currency-selector');
+        if (mainSelector) {
+            mainSelector.value = selectedCurrency;
+        }
+
+        // Hide modal and allow interactions
+        modal.style.display = 'none';
+
+        // Update any displayed values (initially zero but keep consistent)
+        updateQuoteSummary(document.getElementById('selected-service-name').textContent || 'None', document.getElementById('service-details-summary').textContent || '', [] , currentQuote || 0);
+        if (cart.length > 0) {
+            updateCartDisplay();
+            updateCartModal();
+        }
+    });
+}
+
+// Guard helper to ensure currency chosen
+function ensureCurrencySelected() {
+    if (!selectedCurrency) {
+        // If modal exists, show it again
+        const modal = document.getElementById('currency-modal');
+        if (modal) modal.style.display = 'flex';
+        return false;
+    }
+    return true;
+}
 
 function initializeQuoteCalculator() {
     // Hide all service forms initially
@@ -162,6 +207,29 @@ function setupEventListeners() {
     
     // Payment functionality
     setupPaymentEventListeners();
+}
+
+// Re-calculate the active service's quote after currency or other global changes
+function calculateAndUpdateQuote() {
+    switch (selectedService) {
+        case 'bim-modelling':
+            calculateBIMModellingPrice();
+            break;
+        case 'bim-automation':
+            calculateBIMAutomationPrice();
+            break;
+        case 'bim-coordination':
+            calculateBIMCoordinationPrice();
+            break;
+        case 'quantities-costing':
+            calculateQuantitiesCostingPrice();
+            break;
+        case '3d-visualization':
+            calculate3DVisualizationPrice();
+            break;
+        default:
+            updateQuoteSummary('None', 'Please select a service to see pricing details', [], 0);
+    }
 }
 
 function selectService(serviceType) {
@@ -321,6 +389,7 @@ function toggleVisualizationSections() {
 
 function calculateBIMModellingPrice() {
     if (selectedService !== 'bim-modelling') return;
+    if (!ensureCurrencySelected()) return;
     
     const projectType = document.getElementById('project-type').value;
     const area = parseFloat(document.getElementById('bim-area').value) || 0;
@@ -360,6 +429,7 @@ function calculateBIMModellingPrice() {
 
 function calculateBIMAutomationPrice() {
     if (selectedService !== 'bim-automation') return;
+    if (!ensureCurrencySelected()) return;
     
     const tasks = parseInt(document.getElementById('automation-tasks').value) || 0;
     const automationType = document.getElementById('automation-type').value;
@@ -390,6 +460,7 @@ function calculateBIMAutomationPrice() {
 
 function calculateBIMCoordinationPrice() {
     if (selectedService !== 'bim-coordination') return;
+    if (!ensureCurrencySelected()) return;
     
     const coordinationType = document.getElementById('coordination-type').value;
     const area = parseFloat(document.getElementById('coordination-area').value) || 0;
@@ -429,6 +500,7 @@ function calculateBIMCoordinationPrice() {
 
 function calculateQuantitiesCostingPrice() {
     if (selectedService !== 'quantities-costing') return;
+    if (!ensureCurrencySelected()) return;
     
     const costingType = document.getElementById('costing-type').value;
     const area = parseFloat(document.getElementById('costing-area').value) || 0;
@@ -471,6 +543,7 @@ function calculateQuantitiesCostingPrice() {
 
 function calculate3DVisualizationPrice() {
     if (selectedService !== '3d-visualization') return;
+    if (!ensureCurrencySelected()) return;
     
     const visualizationType = document.getElementById('visualization-type').value;
     
@@ -529,6 +602,16 @@ function getVisualizationSummary(type) {
 }
 
 function updateQuoteSummary(serviceName, details, breakdown, totalPrice = 0) {
+    // If currency not chosen yet, show amounts as placeholder and don't attempt formatting
+    if (!selectedCurrency) {
+        document.getElementById('selected-service-name').textContent = serviceName;
+        document.getElementById('service-details-summary').innerHTML = `<p>${details}</p>`;
+        document.getElementById('pricing-breakdown').innerHTML = '';
+        document.getElementById('total-price').textContent = '—';
+        document.getElementById('advance-amount').textContent = '—';
+        document.getElementById('add-to-cart-btn').style.display = 'none';
+        return;
+    }
     document.getElementById('selected-service-name').textContent = serviceName;
     
     const detailsElement = document.getElementById('service-details-summary');

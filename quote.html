@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Currency Selection Modal (asks user before showing pricing) -->
+    <div id="currency-modal" class="currency-modal">
+        <div class="currency-modal-content">
+            <h3>Select your currency</h3>
+            <p>Please choose your preferred currency to view all prices.</p>
+            <select id="currency-modal-selector">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+            </select>
+            <div class="currency-modal-actions">
+                <button id="currency-modal-confirm" class="cta-button">Continue</button>
+            </div>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
