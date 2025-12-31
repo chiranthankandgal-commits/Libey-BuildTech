@@ -62,7 +62,7 @@ const App: React.FC = () => {
                       A partner in your project's financial integrity.
                     </h2>
                     <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                      Libey BuildTech is not a design firm or a drafting shop. We are a BIM-led consultancy focused on <strong>decision support and risk mitigation.</strong>
+                      Libey BuildTech is a BIM-led consultancy focused on <strong>decision support and risk mitigation.</strong>
                     </p>
                     <div className="p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-600">
                       <p className="text-slate-800 font-medium italic mb-2">

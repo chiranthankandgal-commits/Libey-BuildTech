@@ -12,39 +12,42 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'cost-control',
     title: 'BIM-Based Cost & Quantity Control',
-    description: 'For clients who already have a Revit model. We standardize your existing digital assets to ensure every data point is accurate and construction-ready.',
+    description:
+      'For clients who already have a Revit model. We standardize your existing digital assets to ensure every data point is accurate and construction-ready.',
     features: [
       'Model standardization for reliable data',
       'Automated quantity extraction',
-      'Real-time cost impact tracking for design changes'
+      'Real-time cost impact tracking for design changes',
     ],
     outcome: 'Controlled budgets and fewer construction surprises.',
-    imageUrl: 'https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=1200&h=800'
+    imageUrl: '/images/services/cost-control.jpg',
   },
   {
     id: 'planning-boq',
     title: 'BIM-Led Planning & BOQs',
-    description: 'For projects with only 2D drawings or sketches. We build a specialized planning model strictly for financial and quantity validation.',
+    description:
+      'For projects with only 2D drawings or sketches. We build a specialized planning model strictly for financial and quantity validation.',
     features: [
       'Creation of planning-level digital models',
       'Extraction of accurate Bills of Quantities (BOQs)',
-      'Early-stage cost clarity before ground-breaking'
+      'Early-stage cost clarity before ground-breaking',
     ],
     outcome: 'Cost certainty before you commit to execution.',
-    imageUrl: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200&h=800'
+    imageUrl: '/images/services/planning-boq.jpg',
   },
   {
     id: 'construction-cost',
     title: 'Construction Phase Cost Control',
-    description: 'Ongoing support during active construction to validate variations and track changes as they happen on-site.',
+    description:
+      'Ongoing support during active construction to validate variations and track changes as they happen on-site.',
     features: [
       'Validation of quantity variations on-site',
       'Strategic tracking of scope changes',
-      'Data-driven decision support for project principals'
+      'Data-driven decision support for project principals',
     ],
     outcome: 'Fewer disputes and significantly smoother construction phases.',
-    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200&h=800'
-  }
+    imageUrl: '/images/services/construction-cost.jpg',
+  },
 ];
 
 export const PRODUCTS: ProductItem[] = [
