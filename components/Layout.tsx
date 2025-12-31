@@ -313,10 +313,8 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
               </p>
               <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                 <span className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Direct Inquiry</span>
-<<<<<<< HEAD
+
                 <span className="text-white font-bold text-sm">libeybuildtech@gmail.com</span>
-=======
-                <span className="text-white font-bold text-sm">expert@libeybuildtech.com</span>
 >>>>>>> 0242dbfab142062236bead36e60218c22d90ccc0
               </div>
             </div>
