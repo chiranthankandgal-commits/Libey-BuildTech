@@ -8,6 +8,7 @@ interface LayoutProps {
   setActiveTab: (tab: AppTab) => void;
 }
 
+<<<<<<< HEAD
 const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => {
   const [imgError, setImgError] = React.useState(false);
   const src = '/logo.png'; // Place your uploaded logo at public/logo.png or adjust path to /assets/logo.png if you prefer
@@ -84,6 +85,67 @@ const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => 
     </svg>
   );
 };
+=======
+const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => (
+  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="lMetallic" x1="20" y1="20" x2="60" y2="80" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#CBD5E1" />
+        <stop offset="50%" stopColor="#F8FAFC" />
+        <stop offset="100%" stopColor="#94A3B8" />
+      </linearGradient>
+      <linearGradient id="lBlue" x1="38" y1="25" x2="38" y2="65" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0EA5E9" />
+        <stop offset="100%" stopColor="#1D4ED8" />
+      </linearGradient>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+        <feOffset dx="1" dy="1" result="offsetblur" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.5" />
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    {/* The Bounding Hexagon Shape - Dark Background */}
+    <path d="M10 30 L50 10 L90 30 V70 L50 90 L10 70 Z" fill="#020617" />
+    
+    {/* The 'L' - 3D Metallic Structure */}
+    {/* Outer metallic bevel */}
+    <path d="M28 22 V72 H62 V60 H40 V22 H28Z" fill="url(#lMetallic)" />
+    {/* Inner blue face */}
+    <path d="M35 25 V65 H58 V58 H42 V25 H35Z" fill="url(#lBlue)" />
+    
+    {/* The 'B' - Precise Wireframe Matching Logo */}
+    <g stroke="#F8FAFC" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#shadow)">
+      {/* Top section of B */}
+      <path d="M48 22 H75 L88 40 L70 50" />
+      {/* Bottom section of B */}
+      <path d="M70 50 L88 62 L75 78 H48" />
+      {/* Vertical spine connecting nodes */}
+      <path d="M48 22 V78" />
+      {/* Middle horizontal bar */}
+      <path d="M48 50 H70" />
+    </g>
+    
+    {/* Nodes (Circles) - Precise Placement */}
+    <g fill="#F8FAFC">
+      <circle cx="48" cy="22" r="3" /> {/* Top Left of B */}
+      <circle cx="75" cy="22" r="3" /> {/* Top Right Corner */}
+      <circle cx="88" cy="40" r="3" /> {/* Middle Upper Right */}
+      <circle cx="70" cy="50" r="3" /> {/* Middle Center Connector */}
+      <circle cx="48" cy="50" r="3" /> {/* Middle Left of B */}
+      <circle cx="88" cy="62" r="3" /> {/* Middle Lower Right */}
+      <circle cx="75" cy="78" r="3" /> {/* Bottom Right Corner */}
+      <circle cx="48" cy="78" r="3" /> {/* Bottom Left of B */}
+    </g>
+  </svg>
+);
+>>>>>>> 0242dbfab142062236bead36e60218c22d90ccc0
 
 const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) => {
   const tabs = [
@@ -251,7 +313,11 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
               </p>
               <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                 <span className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Direct Inquiry</span>
+<<<<<<< HEAD
                 <span className="text-white font-bold text-sm">libeybuildtech@gmail.com</span>
+=======
+                <span className="text-white font-bold text-sm">expert@libeybuildtech.com</span>
+>>>>>>> 0242dbfab142062236bead36e60218c22d90ccc0
               </div>
             </div>
           </div>
