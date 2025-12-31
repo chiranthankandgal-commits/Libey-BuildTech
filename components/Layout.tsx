@@ -85,7 +85,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => 
     </svg>
   );
 };
-=======
+
 const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => (
   <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -145,7 +145,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => 
     </g>
   </svg>
 );
->>>>>>> 0242dbfab142062236bead36e60218c22d90ccc0
+
 
 const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) => {
   const tabs = [
