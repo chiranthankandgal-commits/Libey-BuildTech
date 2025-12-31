@@ -20,7 +20,7 @@ export const SERVICES: ServiceItem[] = [
       'Real-time cost impact tracking for design changes',
     ],
     outcome: 'Controlled budgets and fewer construction surprises.',
-    imageUrl: '/images/services/cost-control.jpg',
+    imageUrl: '/services/cost-control.jpg',
   },
   {
     id: 'planning-boq',
@@ -33,7 +33,7 @@ export const SERVICES: ServiceItem[] = [
       'Early-stage cost clarity before ground-breaking',
     ],
     outcome: 'Cost certainty before you commit to execution.',
-    imageUrl: '/images/services/planning-boq.jpg',
+    imageUrl: '/services/planning-boq.jpg',
   },
   {
     id: 'construction-cost',
@@ -46,7 +46,7 @@ export const SERVICES: ServiceItem[] = [
       'Data-driven decision support for project principals',
     ],
     outcome: 'Fewer disputes and significantly smoother construction phases.',
-    imageUrl: '/images/services/construction-cost.jpg',
+    imageUrl: '/services/construction-cost.jpg',
   },
 ];
 
