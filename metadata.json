@@ -1,0 +1,8 @@
+{
+  "name": "Libey BuildTech",
+  "description": "Professional B2B consultancy website for BIM-led planning and cost control, helping construction projects avoid surprises.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
