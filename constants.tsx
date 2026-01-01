@@ -2,13 +2,13 @@
 import { ServiceItem, ProductItem } from './types';
 
 export const COLORS = {
-  primary: '#1e293b', // slate-800
-  secondary: '#64748b', // slate-500
-  accent: '#3b82f6', // blue-500
-  neutral: '#f8fafc', // slate-50
+  primary: '#1e293b',
+  secondary: '#64748b',
+  accent: '#3b82f6',
+  neutral: '#f8fafc',
 };
 
-eexport const SERVICES: ServiceItem[] = [
+export const SERVICES: ServiceItem[] = [
   {
     id: 'cost-control',
     title: 'BIM-Based Cost & Quantity Control',
@@ -46,9 +46,10 @@ eexport const SERVICES: ServiceItem[] = [
       'Data-driven decision support for project principals',
     ],
     outcome: 'Fewer disputes and significantly smoother construction phases.',
-    imageUrl: '/services/construction-phase.png', // ✅ FIXED
+    imageUrl: '/services/construction-phase.png',
   },
 ];
+
 
 
 export const PRODUCTS: ProductItem[] = [
