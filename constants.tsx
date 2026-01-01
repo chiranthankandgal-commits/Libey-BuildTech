@@ -8,7 +8,7 @@ export const COLORS = {
   neutral: '#f8fafc', // slate-50
 };
 
-export const SERVICES: ServiceItem[] = [
+eexport const SERVICES: ServiceItem[] = [
   {
     id: 'cost-control',
     title: 'BIM-Based Cost & Quantity Control',
@@ -20,7 +20,7 @@ export const SERVICES: ServiceItem[] = [
       'Real-time cost impact tracking for design changes',
     ],
     outcome: 'Controlled budgets and fewer construction surprises.',
-    imageUrl: '/services/cost-control.jpg',
+    imageUrl: '/services/cost-control.png',
   },
   {
     id: 'planning-boq',
@@ -33,7 +33,7 @@ export const SERVICES: ServiceItem[] = [
       'Early-stage cost clarity before ground-breaking',
     ],
     outcome: 'Cost certainty before you commit to execution.',
-    imageUrl: '/services/planning-boq.jpg',
+    imageUrl: '/services/planning-boq.png',
   },
   {
     id: 'construction-cost',
@@ -46,9 +46,10 @@ export const SERVICES: ServiceItem[] = [
       'Data-driven decision support for project principals',
     ],
     outcome: 'Fewer disputes and significantly smoother construction phases.',
-    imageUrl: '/services/construction-cost.jpg',
+    imageUrl: '/services/construction-phase.png', // ✅ FIXED
   },
 ];
+
 
 export const PRODUCTS: ProductItem[] = [
   {
