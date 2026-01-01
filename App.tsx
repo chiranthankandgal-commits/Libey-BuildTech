@@ -295,38 +295,64 @@ const App: React.FC = () => {
                 </div>
                 <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-2xl border border-slate-100">
                   <h3 className="text-2xl font-bold mb-8 text-center text-slate-900">Schedule Your Call</h3>
-                  <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Request sent. We will contact you shortly."); }}>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2">First & Last Name</label>
-                      <input type="text" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="John Doe" required />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2">Company Email</label>
-                      <input type="email" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="john@firm.com" required />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2">Project Type</label>
-                      <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-                        <option>Real Estate Development</option>
-                        <option>Architectural Support</option>
-                        <option>Construction Management</option>
-                      </select>
-                    </div>
-                    <div className="pt-4">
-  <a
-    href="https://forms.gle/MwEweWvufusbdFLX8"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full text-center inline-block px-10 py-5 bg-blue-600 text-white rounded-xl text-lg font-bold hover:bg-blue-500 transition-all shadow-lg"
-  >
-    Schedule a Discovery Call
-  </a>
-</div>
+                  <form
+  className="space-y-6"
+  onSubmit={(e) => {
+    e.preventDefault();
+    alert("Request sent. We will contact you shortly.");
+  }}
+>
+  <div>
+    <label className="block text-sm font-bold text-slate-700 mb-2">
+      First & Last Name
+    </label>
+    <input
+      type="text"
+      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+      placeholder="John Doe"
+      required
+    />
+  </div>
 
-  Schedule a Discovery Call
-</a>
-                    <p className="text-center text-xs text-slate-400">Assurance of no obligation. Data handled securely.</p>
-                  </form>
+  <div>
+    <label className="block text-sm font-bold text-slate-700 mb-2">
+      Company Email
+    </label>
+    <input
+      type="email"
+      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+      placeholder="john@firm.com"
+      required
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm font-bold text-slate-700 mb-2">
+      Project Type
+    </label>
+    <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+      <option>Real Estate Development</option>
+      <option>Architectural Support</option>
+      <option>Construction Management</option>
+    </select>
+  </div>
+
+  <div className="pt-4">
+    <a
+      href="https://forms.gle/MwEweWvufusbdFLX8"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full text-center inline-block px-10 py-5 bg-blue-600 text-white rounded-xl text-lg font-bold hover:bg-blue-500 transition-all shadow-lg"
+    >
+      Schedule a Discovery Call
+    </a>
+  </div>
+
+  <p className="text-center text-xs text-slate-400">
+    Assurance of no obligation. Data handled securely.
+  </p>
+</form>
+
                 </div>
               </div>
             </div>
